@@ -6,7 +6,7 @@
  **ésimo número de Fibonacci:
 */
 
-/*let numeroEntrada = 11;
+/*let numeroEntrada = parseInt(prompt("Numero entero de entrada"));
 let numeroFibonacci = 0;
 let numeroAnterior = 1;
 let prevAnterior = 0;
@@ -28,7 +28,7 @@ if(numeroEntrada > numeroAnterior){
 */
 
 /*let calculoFibonacci = 0;
-let numeroEntrada = 88;
+let numeroEntrada = parseInt(prompt("Numero entero de entrada"));;
 let numeroAnterior = 1;
 let prevAnterior = 0;
 while(calculoFibonacci < numeroEntrada){
@@ -48,7 +48,7 @@ if(calculoFibonacci == numeroEntrada){
 **ingresado por el usuario: 
 */
 
-/*let numeroEntrada = 11;
+/*let numeroEntrada =  parseInt(prompt("Numero entero de entrada"));;
 let numeroFibonacci = 0;
 let numeroAnterior = 0;
 let prevAnterior = 0;
@@ -71,8 +71,8 @@ for (let i = 0; i <= numeroEntrada; i++){
   **como resultado el producto de ambos, calculado mediante el método de multiplicación rusa.
  */
 
-/*let multiplicador = 59;
-let multiplicando = 46;
+/*let multiplicador =  parseInt(prompt("Numero entero de multiplicador"));;
+let multiplicando =  parseInt(prompt("Numero entero de multiplicando"));;
 let suma = 0;
 
 while(multiplicador >= 1){
@@ -90,6 +90,7 @@ console.log(suma); */
  * *Desarrolle un programa que permita encontrar dicho par.
  */
 
+/*
 let limiteinferior = 1000;
 let limitesuperior = 1500;
 let objetoNumeroSuma = {};
@@ -109,3 +110,63 @@ for(let i = limiteinferior; i <= limitesuperior; i++){
         }    
     }
 }
+*/
+
+/**
+ * TODO Reto 4: Votaciones de la CONFECH
+    **La CONFECH, en su afán de agilizar el proceso de recuento de las votaciones, le ha encargado el
+    desarrollo de un programa de registro de votación por universidades.
+        Primero, el programa debe solicitar al usuario ingresar la cantidad de universidades que participan
+        en el proceso.
+        Luego, para cada una de las universidades, el usuario debe ingresar el nombre de la universidad y
+        los votos de sus alumnos, que pueden ser: aceptar (A), rechazar (R), nulo (N) o blanco (B). El término
+        de la votación se indica ingresando una X, tras lo cual se debe mostrar los totales de votos de la
+        universidad, con el formato que se muestra en el ejemplo.
+        Finalmente, el programa debe mostrar el resultado de la votación, indicando la cantidad de
+        universidades que aceptan, que rechazan y en las que hubo empate entre estas dos opciones.
+ */
+
+let cantidadUniversidades = parseInt(prompt("Ingrese la cantidad de universidades"));
+let universidadesA = 0;
+let universidadesR = 0;
+let universidadesE = 0;
+
+for (let i = 0; i < cantidadUniversidades; i++){
+    let nombreUniversidad = prompt("Ingrese el nombre de la universidad");
+    let alumnosA = 0;
+    let alumnosR = 0;
+    let alumnosN = 0;
+    let alumnosB = 0;
+    let voto = "";
+    while(voto!= "X"){
+        voto = prompt("Ingrese el voto de la universidad");
+        switch(voto){
+            case "A":
+                alumnosA++
+                break;
+            case "R":
+                alumnosR++
+                break;
+            case "N":
+                alumnosN++
+                break;
+            case "B":
+                alumnosB++
+                break;
+        }
+    }
+    if(alumnosA > alumnosR){
+        universidadesA++;
+    }else if(alumnosR > alumnosA){
+        universidadesR++;
+    }else{
+        universidadesE++;
+    }
+    let respuesta = `${nombreUniversidad}: ${alumnosA} aceptan, ${alumnosR} rechazan, ${alumnosB} blanco, ${alumnosN} nulos`
+    console.log(respuesta);
+}
+
+let respuestaFinal = `Universidades que aceptan: ${universidadesA}
+    Universidades que rechazan: ${universidadesR}
+    Universidades que hubo empate: ${universidadesE}`
+console.log(respuestaFinal);
