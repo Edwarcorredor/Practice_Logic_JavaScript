@@ -126,6 +126,7 @@ for(let i = limiteinferior; i <= limitesuperior; i++){
         universidades que aceptan, que rechazan y en las que hubo empate entre estas dos opciones.
  */
 
+        /*
 let cantidadUniversidades = parseInt(prompt("Ingrese la cantidad de universidades"));
 let universidadesA = 0;
 let universidadesR = 0;
@@ -169,4 +170,49 @@ for (let i = 0; i < cantidadUniversidades; i++){
 let respuestaFinal = `Universidades que aceptan: ${universidadesA}
     Universidades que rechazan: ${universidadesR}
     Universidades que hubo empate: ${universidadesE}`
-console.log(respuestaFinal);
+console.log(respuestaFinal);*/
+
+/**
+ * TODO Reto 5: Question Description
+ * Function Description
+Complete the function minNum in the editor below.
+MinNum has the following parameter(s):
+SamDaily: Number of problems Sam solves in a day
+KellyDaily: Number of problems Kelly solves in a day
+Difference: Number of problems Sam isa head to begin
+Return
+Int: the minimum number of days needed by Kelly to exceed Samm, or -1 if it is imposible
+Constraints
+ 1 ≤ samDaily, kellyDaily ≤ 100
+ 0 ≤ difference ≤ 100
+ */
+
+/*
+let SamDaily = parseInt(prompt("Ingrese el numero de ejercicios diarios de sam, debe estar entre 1 y 100"));
+let KellyDaily = parseInt(prompt("Ingrese el numero de ejercicios diarios de kelly, debe estar entre 1 y 100"));
+let Difference = parseInt(prompt("Ingrese el numero de diferencia entre ellos al inicio"));
+
+if(SamDaily >= 1 && SamDaily <= 100 && KellyDaily >=1 && KellyDaily <=100 && Difference >=1 && Difference<=100){
+    let DifferenceKelly = KellyDaily - SamDaily;
+    if(DifferenceKelly > 0){
+        let samSolved = SamDaily + Difference;
+        let KellySolved = KellyDaily;
+        let contadorDias = 1;
+        while(true){
+            if(KellySolved > samSolved){
+                break;
+            }
+            else{
+                samSolved = samSolved + SamDaily;
+                KellySolved = KellySolved + KellyDaily;
+                contadorDias++;
+            }
+        }
+        let respuesta = `El minimo numero de dias que necesita Kelly para superar a Sam son ${contadorDias}`
+        console.log(respuesta);
+    }else{
+        console.log(-1);
+    }
+}else{
+    alert("Ingreso numeros fuera del rango")
+}*/
