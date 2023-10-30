@@ -84,3 +84,28 @@ while(multiplicador >= 1){
     multiplicando = multiplicando * 2;
 }
 console.log(suma); */
+
+/**
+ * TODO Reto 3: Números amistosos
+ * *Desarrolle un programa que permita encontrar dicho par.
+ */
+
+let limiteinferior = 1000;
+let limitesuperior = 1500;
+let objetoNumeroSuma = {};
+for (let i = limiteinferior; i <= limitesuperior; i++){
+    let suma = 0;
+    for(let j = 1 ; j < i; j++){
+        if(i % j === 0){
+            suma = suma + j;
+        }
+    }
+    objetoNumeroSuma[i] = suma;
+}
+for(let i = limiteinferior; i <= limitesuperior; i++){
+    if(objetoNumeroSuma[i] >= limiteinferior && objetoNumeroSuma[i] <= limitesuperior){
+        if(i == objetoNumeroSuma[objetoNumeroSuma[i]]){
+            console.log("numero amistoso", i);
+        }    
+    }
+}
