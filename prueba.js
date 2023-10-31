@@ -216,3 +216,48 @@ if(SamDaily >= 1 && SamDaily <= 100 && KellyDaily >=1 && KellyDaily <=100 && Dif
 }else{
     alert("Ingreso numeros fuera del rango")
 }*/
+
+/**
+ * TODO QUESTION DESCRIPTION
+Consider every susequence of an array of integers.
+ Sort the subsequence in increasing order.
+ Determine the sum of differences of elements in the subsequence.
+ Return the length of the longest subsequence where this sum is even.
+ */
+
+let tamañoArray = parseInt(prompt("Ingresa el tamaño del array mayor a 3 y menor a 10 elevado a la 5"))
+let arrayNumeros = [];
+let arrayDiferencias = 0;
+let arraySort = []
+let validate = "";
+if(tamañoArray >= 3 && tamañoArray <= Math.pow(5,10)){
+    for(let i=0; i< tamañoArray; i++){
+        while(true){
+            let numeroEntrada = parseInt(prompt("Ingrese numero entero"));
+            if(numeroEntrada >= 0 && numeroEntrada <=Math.pow(9,10)){
+                arrayNumeros.push(numeroEntrada);
+                break;  
+            }else{
+                alert("Ingreso numero fuera del rango")
+            }
+        }
+    }
+    arraySort = arrayNumeros.sort();
+    for(let i=0; i<tamañoArray-1; i++){
+       arrayDiferencias = arraySort[i+1] - arraySort[i] + arrayDiferencias;
+    }
+    if(arrayDiferencias % 2 ===0){
+        validate = "Is Valid"
+    }
+    else{
+        validate = "Not Valid"
+    }
+    let respuesta = `El array en orden ascendente es ${arraySort}
+    La diferencia de los numeros es ${arrayDiferencias},
+    el array ${validate},
+    el tamaño del array es ${tamañoArray}`
+    console.log(respuesta)
+}else{
+    alert("Ingreso numeros fuera del rango")
+}
+
